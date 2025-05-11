@@ -1,24 +1,17 @@
-# name
+# アプリケーション名
 confirmation-test0507
 
-## Overview
-確認テスト（お問い合わせフォーム）
+## 環境構築
+Dockerのビルドからマイグレーション、シーディングまでを記述する
 
-## Requirement
+## 使用技術(実行環境)
+Laravel 8.x
+　(言語：PHP
+ 　フレームワーク：Laravel
+　　バージョン：)
 
+## ER図
+< - - - 作成したER図の画像 - - - >
 
-## Usage
-所要のディレクトリ以下に、laravel-docker-template.gitをクローンし
-
-## Features
-
-## Reference
-
-## Author
-
-[twitter](https://twitter.com/Kotabrog)
-
-## Licence
-
-[MIT](https://......)
-
+## URL
+- 例) 開発環境：http://localhost/
