@@ -1,0 +1,35 @@
+body {
+  font-family: 'Yu Gothic', sans-serif;
+  color: #3b2e2e;
+  /* padding: 200px; */
+}
+
+.header {
+  /* max-width: 1230px; */
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: #ffffff;
+  padding-top: 40px;
+  text-align: center;
+  color:#938372;
+  border-bottom: 1px solid lightgray;
+}
+
+.header__left,
+.header__right {
+  flex: 1;
+}
+
+.header__center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-inner__title {
+  font-size: 24px;
+  font-family: serif;
+}

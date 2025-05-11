@@ -1,0 +1,50 @@
+body {
+  background: #fdfdfd;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.background {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.front {
+  font-size: 18px;
+  color: #6e5c5c;
+  margin-bottom: 20px;
+}
+
+.home {
+  background-color: #6e5c5c;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.home:hover {
+  background-color: #554848;
+}
+
+.background-message {
+  font-family: 'Times New Roman', Times, serif  ;
+  position: absolute;
+  font-size: 20vw;
+  color: rgba(200, 200, 200, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  white-space: nowrap;
+}

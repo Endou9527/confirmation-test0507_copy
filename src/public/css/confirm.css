@@ -1,0 +1,84 @@
+.confirm-page{
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 60px);
+}
+
+.form-container{
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container__page{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 100;
+  color: #857e6f;
+  font-size: 2rem;
+  margin: 30px;
+  text-align: center;
+}
+
+.form {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.confirm-table {
+  border: 1px solid #ddd;
+}
+
+.confirm-table__inner {
+  width: 100%;
+}
+
+.confirm-table__header {
+  padding: 15px;
+  width: 20%;
+  border-bottom: 1px solid #ddd;
+  background-color: #eee;
+  font-weight: bold;
+}
+
+.confirm-table__text {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.confirm-table__text input {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.confirm-table__row:last-child .confirm-table__header,
+.confirm-table__row:last-child .confirm-table__text {
+  border-bottom-width: 0;
+}
+
+.form__button {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.form__button-submit {
+  display: inline-block;
+  padding: 10px;
+  width: 30%;
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form__button-modify {
+  display: inline-block;
+}
