@@ -66,11 +66,20 @@ textarea {
 .tel-fields {
   display: flex;
   gap: 10px;
+  width: 100%;
 }
 
-.radio-group {
+.gender-fields {
   display: flex;
   gap: 20px;
+}
+
+label{
+  width: 100px;
+}
+
+.form-controll{
+  width: 100%;
 }
 
 .button__form-group{
