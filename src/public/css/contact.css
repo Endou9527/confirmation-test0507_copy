@@ -37,7 +37,7 @@
 
 .form-label {
   width: 300px;
-  font-weight: bold;
+  color: #988c81;
   display: block;
   margin-bottom: 8px;
 }
@@ -45,6 +45,14 @@
 .required {
   color: red;
   margin-left: 5px;
+}
+
+[class$="fields"] {
+  width: 100%;
+}
+
+.form__error{
+  color: red;
 }
 
 input, select, textarea {
@@ -56,6 +64,11 @@ input, select, textarea {
   padding: 10px;
   box-sizing: border-box;
 }
+/* input,select〜を上書きする形で */
+.gender-fields input{
+  width: auto;
+  text-align: left;
+}
 
 textarea {
   height: 100px;
@@ -64,6 +77,14 @@ textarea {
 
 .name-fields,
 .tel-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.name-fields__input,
+.tel-fields__input{
   display: flex;
   gap: 10px;
   width: 100%;
@@ -74,15 +95,12 @@ textarea {
   gap: 20px;
 }
 
-label{
-  width: 100px;
-}
-
 .form-controll{
   width: 100%;
 }
 
 .button__form-group{
+  margin-top: 50px;
   justify-self: center;
 }
 
