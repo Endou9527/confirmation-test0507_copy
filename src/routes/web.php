@@ -17,9 +17,9 @@ use App\Http\Controllers\UserController;
 
 Route::get('/',[ContactController::class,'contact']); 
 
-Route::post('/confirm',[ContactController::class,'confirm']);
-
 Route::post('/contacts',[ContactController::class,'store']);
+
+Route::post('/confirm',[ContactController::class,'confirm']);
 
 Route::middleware('auth')->group(function () {
   Route::get('/admin', [UserController::class, 'admin']);

@@ -5,12 +5,7 @@
 @endsection
 
 @section('button')
-@if(Auth::check())
-<form class="form" action="/logout" method="post">
-  @csrf
-  <button class="logout-button">logout</button>
-</form>
-@endif
+  <a href="/login" class="logout-button">logout</a>
 @endsection
 
 @section('content')
@@ -29,13 +24,11 @@
         <option>女性</option>
         <option>その他</option>
       </select>
-      <select class="search__category">
-        <option value="category1">お問い合わせの種類</option>
-        <option value="category1">1. 商品のお届けについて</option>
-        <option value="category2">2. 商品の交換について</option>
-        <option value="category3">3. 商品トラブル</option>
-        <option value="category4">4. ショップへのお問い合わせ</option>
-        <option value="category5">5. その他</option>  
+      <select class="search__category" name="category_id">
+        <!-- <option value="category1">お問い合わせの種類</option> -->
+        @foreach($categories as $category)
+          <option value="{{ $category['category_id'] }}">{{ $category['name'] }}</option>
+        @endforeach
       </select>
       <input type="date" class="search__date"></input>
       <button class="search-button">検索</button>

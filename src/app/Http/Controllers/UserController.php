@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Category;
 use App\Models\Contact;
 
 class UserController extends Controller
@@ -17,8 +18,14 @@ class UserController extends Controller
         return view('auth.login');
     }
 
+    public function logout(){
+        return view('auth.login');
+    }
+
     public function admin(){
-        $contactData = Contact::all();
-        return view('admin',['contactData'=>$contactData]);
+        $contactData = User::with('category')->get();
+        $categories = Category::all();
+
+        return view('admin',compact('contactData','categories'));
     }
 }

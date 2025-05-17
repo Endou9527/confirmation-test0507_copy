@@ -1,13 +1,3 @@
-@if ($errors->any())
-  <div class="alert alert-danger">
-    <ul>
-      @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-  </div>
-@endif
-
 @extends('layouts.app')
 
 @section('css')
@@ -15,10 +5,7 @@
 @endsection
 
 @section('button')
-<form class="form" action="/login" method="post">
-  @csrf
-  <button class="login-button">login</button>
-</form>
+  <a href="/login" class="login-button">login</a>
 @endsection
 
 @if (session('status'))

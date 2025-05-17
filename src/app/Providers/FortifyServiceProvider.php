@@ -22,7 +22,7 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         Fortify::authenticateUsing(function (Request $request) {
-            $user = \App\Models\AdminUser::where('email', $request->email)->first();
+            $user = \App\Models\User::where('email', $request->email)->first();
     
             if ($user && \Hash::check($request->password, $user->password)) {
                 return $user;

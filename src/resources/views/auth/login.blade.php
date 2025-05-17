@@ -5,14 +5,12 @@
 @endsection
 
 @section('button')
-{{-- @if(User::check()) --}}
-<form class="form" action="/register" method="get">
-  @csrf
-  <button class="register-button">register</button>
-</form>
-{{-- @endif --}}
+{{-- buttonで"register"アクションだとルーティングかぶる --}}
+<!-- <form class="form" action="/register" method="post">
+  @csrf -->
+  <a href="/register" class="register-button">register</a>
+<!-- </form> -->
 @endsection
-
 
 @section('content')
   <div class="login-page">
@@ -25,11 +23,11 @@
         @csrf
         <div class="login-email">
           <label for="login-email__label" class="label">メールアドレス</label>
-          <input type="email" id="login-email__label" class="form-input" placeholder="例：test@example.com">
+          <input type="email" name="email" id="login-email__label" class="form-input" placeholder="例：test@example.com">
         </div>
         <div class="login-password">
           <label for="login-password__label" class="label">パスワード</label>
-          <input type="password" id="login-password__label" class="form-input" placeholder="coachtech1106">
+          <input type="password" name="password" id="login-password__label" class="form-input" placeholder="coachtech1106">
         </div>
   
         <div class="button">
