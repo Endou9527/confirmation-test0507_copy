@@ -13,7 +13,7 @@
 
   <div class="front">
     <h2 class="front-message">お問い合わせありがとうございました</div>
-    <button class="home">HOME</button>
+    <a href="/" class="home">HOME</button>
   </div>
 
 </body>
