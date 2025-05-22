@@ -15,14 +15,15 @@
   </div>
 
   <div class="search">
-    <form action="">
-      <input type="text" class="search__word" placeholder="名前やメールアドレスを入力してください"></input>
+    <form class="search-form" action="/admin/search" method="get">
+      @csrf
+      <input class="search__word" type="text" name="keyword" value="{{ old('keyword') }}" placeholder="名前やメールアドレスを入力してください"></input>
       <select class="search__gender">
         <option>性別</option>
         <option>全て</option>
-        <option>男性</option>
-        <option>女性</option>
-        <option>その他</option>
+        @foreach($contactData as $contact)
+        <option value="{{ $contact['gender'] }}">{{ $contact['gender'] }}</option>
+        @endforeach
       </select>
       <select class="search__category" name="category_id">
         <!-- <option value="category1">お問い合わせの種類</option> -->

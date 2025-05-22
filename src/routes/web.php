@@ -24,4 +24,5 @@ Route::post('/confirm',[ContactController::class,'confirm']);
 Route::middleware('auth')->group(function () {
   Route::get('/admin', [UserController::class, 'admin']);
   });
-  
+
+  Route::get('/admin/search',[ContactController::class,'search']);

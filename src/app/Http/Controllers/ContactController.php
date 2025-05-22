@@ -12,14 +12,27 @@ class ContactController extends Controller
     }
 
     public function confirm(ContactRequest $request){
-        $contactData = $request->only(['last_name','first_name','gender','email','tel1','tel2','tel3','address','address__building','category_id','detail']);
-        // $tel = $tel1 . $tel2 . $tel3;
+        $tel = $request -> input('tel1'). $request -> input('tel2'). $request -> input('tel3');
+        $name = $request -> input('last_name'). $request -> input('first_name');
+        $contactData = $request->only([ //'last_name','first_name',
+        'gender','email', //'tel'
+        'address','address__building','category_id','detail']);
+        $contactData['tel'] = $tel;
+        $contactData['name'] = $name;
         return view('confirm',compact('contactData'));
     }
 
     public function store(ContactRequest $request){
-        $contactData = $request->only(['last_name','first_name','gender','email','tel1','tel2','tel3','address','address__building','category_id','detail']);
+        $tel = $request -> input('tel1'). $request -> input('tel2'). $request -> input('tel3');
+        $name = $request -> input('last_name'). $request -> input('first_name');
+        $contactData = $request->only([//'last_name','first_name',
+        'gender','email', //'tel',
+        'address','address__building','category_id','detail']);
+        $contactData['tel'] = $tel;
+        $contactData['name'] = $name;
         Contact::create($contactData);
         return view('thanks');
     }
+
+    // public function search();
 }
