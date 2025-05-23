@@ -17,9 +17,9 @@
         <tr class="confirm-table__row">
           <th class="confirm-table__header">お名前</th>
           <td class="confirm-table__text">
-            <input type="hidden" name="last_name" value="{{ $contactData['last_name'] }}">
-            <input type="hidden" name="first_name" value="{{ $contactData['first_name'] }}">
-            <input type="text" name="name" value="{{ $contactData['last_name']}}  {{ $contactData['first_name'] }}" readonly />
+            {{-- <input type="hidden" name="last_name" value="{{ $contactData['last_name'] }}">
+            <input type="hidden" name="first_name" value="{{ $contactData['first_name'] }}"> --}}
+            <input type="text" name="name" value="{{ $contactData['name']}}" readonly />
           </td>
         </tr>
         <tr class="confirm-table__row">
@@ -42,7 +42,7 @@
             {{-- <input type="hidden" name="tel1" value="{{ $contactData['tel1'] }}" />
             <input type="hidden" name="tel2" value="{{ $contactData['tel2'] }}" />
             <input type="hidden" name="tel3" value="{{ $contactData['tel3'] }}" /> --}}
-            <input type="tel" value="{{ $contactData['tel'] }}" readonly />
+            <input type="tel" name="tel" value="{{ $contactData['tel'] }}" readonly />
           </td>
         </tr>
         <tr class="confirm-table__row">
@@ -63,7 +63,7 @@
         <tr class="confirm-table__row">
           <th class="confirm-table__header">お問い合わせの種類</th>
           <td class="confirm-table__text">
-            <input type="hidden" name="category" value="{{ $contactData['category_id'] }}" />
+            <input type="hidden"  name="category_id" value="{{ $contactData['category_id'] }}" />
             <input type="text" value="{{ $contactData['category_id'] }}" readonly />
           </td>
         </tr>

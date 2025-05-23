@@ -18,7 +18,7 @@
     <form class="search-form" action="/admin/search" method="get">
       @csrf
       <input class="search__word" type="text" name="keyword" value="{{ old('keyword') }}" placeholder="名前やメールアドレスを入力してください"></input>
-      <select class="search__gender">
+      <select class="search__gender" name="gender">
         <option>性別</option>
         <option>全て</option>
         @foreach($contactData as $contact)
@@ -33,7 +33,7 @@
       </select>
       <input type="date" class="search__date"></input>
       <button class="search-button">検索</button>
-      <button class="reset-button">リセット</button>  
+      <button class="reset-button">リセット</button>
     </form>
   </div>
 
@@ -59,7 +59,9 @@
         <tbody>
         @foreach($contactData as $contact)
           <tr>
-            <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
+            <td>{{-- {{ $contact->last_name }} {{ $contact->first_name }} --}}
+            {{ $contact->name }}
+            </td>
             <td>{{ $contact->gender }}</td>
             <td>{{ $contact->email }}</td>
             <td>{{ $contact->category_id }}</td>

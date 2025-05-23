@@ -23,7 +23,7 @@ class UserController extends Controller
     }
 
     public function admin(){
-        $contactData = Contact::with('category_id')->get();
+        $contactData = Contact::with('category')->get();
         $categories = Category::all();
 
         return view('admin',compact('contactData','categories'));
