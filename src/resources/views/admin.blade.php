@@ -28,7 +28,7 @@
       <select class="search__category" name="category_id">
         <!-- <option value="category1">お問い合わせの種類</option> -->
         @foreach($categories as $category)
-          <option value="{{ $category['category_id'] }}">{{ $category['name'] }}</option>
+          <option value="{{ $category['category_id'] }}"></option>
         @endforeach
       </select>
       <input type="date" class="search__date"></input>

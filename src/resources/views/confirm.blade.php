@@ -64,7 +64,10 @@
           <th class="confirm-table__header">お問い合わせの種類</th>
           <td class="confirm-table__text">
             <input type="hidden"  name="category_id" value="{{ $contactData['category_id'] }}" />
-            <input type="text" value="{{ $contactData['category_id'] }}" readonly />
+            @php
+            $selectedCategory = $categories->firstWhere('id', $contactData['category_id']);
+            @endphp
+            <input type="text" value=" {{$selectedCategory  ? $selectedCategory->id . '.' . $selectedCategory->name : '不明' }}" readonly />
           </td>
         </tr>
         <tr class="confirm-table__row">
