@@ -42,7 +42,21 @@ class Contact extends Model
         if (!empty($category_id)) {
             $query->where('category_id', $category_id);
         }
-}
+    }
 
+    public function scopeGenderSearch($query, $gender)
+    {
+        if (!empty($gender)) {
+            $query->where('gender', $gender);
+        }
+        return $query;
+    }
 
+    public function scopeDateSearch($query, $date)
+    {
+        if (!empty($date)) {
+            $query->where('date', $date);
+        }
+        return $query;
+    }
 }

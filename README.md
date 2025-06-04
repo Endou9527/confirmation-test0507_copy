@@ -20,6 +20,7 @@ Laravel 8.75
 
 ## ER図
 < - - - 作成したER図の画像 - - - >
+<a href="/ER図.png">
 
 ## URL
 開発環境：http://localhost/

@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
 @endsection
 
 @section('button')
@@ -20,15 +21,15 @@
       <input class="search__word" type="text" name="keyword" value="{{ old('keyword') }}" placeholder="名前やメールアドレスを入力してください"></input>
       <select class="search__gender" name="gender">
         <option>性別</option>
-        <option>全て</option>
-        @foreach($contactData as $contact)
-        <option value="{{ $contact['gender'] }}">{{ $contact['gender'] }}</option>
+        <option value="">全て</option>
+        @foreach($genders as $gender)
+        <option value="{{ $gender }}" {{ request('gender') == $gender ? 'selected' : '' }}>{{ $gender }}</option>
         @endforeach
       </select>
       <select class="search__category" name="category_id">
-        <!-- <option value="category1">お問い合わせの種類</option> -->
-        @foreach($categories as $category)
-          <option value="{{ $category['category_id'] }}"></option>
+        <option value="category1">お問い合わせの種類</option>
+        @foreach($categories as $id => $name)
+          <option value="{{ $id }}">{{ $name }}</option>
         @endforeach
       </select>
       <input type="date" class="search__date"></input>
@@ -44,6 +45,7 @@
       </form>  
     </div>
     
+    {{ $contactData->appends(request()->query())->links('pagination::custom') }}
     <div class="user-table">
       <table>
         <thead>
@@ -64,7 +66,7 @@
             </td>
             <td>{{ $contact->gender }}</td>
             <td>{{ $contact->email }}</td>
-            <td>{{ $contact->category_id }}</td>
+            <td>{{ $contact->category->name ?? '不明' }}</td>
             <td><button class="user-table__detail">詳細</button></td>
           </tr>
           @endforeach

@@ -112,6 +112,27 @@
   cursor: pointer;
 }
 
+.pagination{
+  justify-content: right;
+}
+
+.pagination .page-item .page-link {
+    background-color: white;
+    color: #82766a;
+    border-color: #82766a;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #82766a !important;
+    color: white !important;
+    border-color: #82766a !important;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #f0f0f0;
+    color: #82766a;
+}
+
 table {
   border-collapse: collapse;
 }
