@@ -6,11 +6,11 @@ confirmation-test0507
 　$ git clone git@github.com:Endou9527/confirmation-test0507.git<br />
 　リポジトリの作成・所要の変更ができたら、<br />
  
-⭐︎Dockerの設定
-　$ docker-compose up -d --build
-　$ code .
+⭐︎Dockerの設定<br />
+　$ docker-compose up -d --build<br />
+　$ code .<br />
 
-⭐︎Laravelのパッケージのインストール<br />
+⭐︎Laravelのパッケージのインストール<br />
 　$ docker-compose exec php bash<br />
 　$ composer install<br />
 
@@ -21,6 +21,7 @@ Laravel 8.75<br />
 ## ER図<br />
 < - - - 作成したER図の画像 - - - >
 <a href="/ER図.png">
+/Users/endoumimori/coachtech/confirmation-test0507_copy/ER図.png
 
 ## URL<br />
 開発環境：http://localhost/<br />
