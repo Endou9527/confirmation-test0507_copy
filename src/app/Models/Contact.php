@@ -33,8 +33,21 @@ class Contact extends Model
             $query->where('name', 'like', '%' . $keyword . '%');
 
             // $query->where('email', 'like', '%' . $keyword . '%');
-
         }
+
+                if (!empty($keyword)) {
+            $query->where('name', 'like', '%' . $keyword . '%');
+
+            // $query->where('email', 'like', '%' . $keyword . '%');
+        }
+    }
+    
+    public function scopeGenderSearch($query, $gender)
+    {
+        if (!empty($gender)) {
+            $query->where('gender', $gender);
+        }
+        // return $query;
     }
 
     public function scopeCategorySearch($query, $category_id)
@@ -44,19 +57,11 @@ class Contact extends Model
         }
     }
 
-    public function scopeGenderSearch($query, $gender)
-    {
-        if (!empty($gender)) {
-            $query->where('gender', $gender);
-        }
-        return $query;
-    }
-
     public function scopeDateSearch($query, $date)
     {
         if (!empty($date)) {
             $query->where('date', $date);
         }
-        return $query;
+        // return $query;
     }
 }

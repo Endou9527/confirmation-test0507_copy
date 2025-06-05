@@ -19,6 +19,7 @@
     <form class="search-form" action="/admin/search" method="get">
       @csrf
       <input class="search__word" type="text" name="keyword" value="{{ old('keyword') }}" placeholder="名前やメールアドレスを入力してください"></input>
+      
       <select class="search__gender" name="gender">
         <option>性別</option>
         <option value="">全て</option>
@@ -26,13 +27,15 @@
         <option value="{{ $gender }}" {{ request('gender') == $gender ? 'selected' : '' }}>{{ $gender }}</option>
         @endforeach
       </select>
+
       <select class="search__category" name="category_id">
         <option value="category1">お問い合わせの種類</option>
         @foreach($categories as $id => $name)
           <option value="{{ $id }}">{{ $name }}</option>
         @endforeach
       </select>
-      <input type="date" class="search__date"></input>
+
+      <input type="date" class="search__date" name="date"></input>
       <button class="search-button">検索</button>
       <button class="reset-button">リセット</button>
     </form>

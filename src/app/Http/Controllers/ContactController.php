@@ -41,10 +41,12 @@ class ContactController extends Controller
     }
 
     public function search(Request $request){
-        $contactData = Contact::with('category')->KeywordSearch($request->keyword)->CategorySearch($request->category_id)->GenderSearch($request->gender)->get();
-        $categories = Category::all();
-        $genders = Contact::select('gender')->distinct()->pluck('gender')->toArray();
+        // $contactData = Contact::with('name')->KeywordSearch($request->keyword)->CategorySearch($request->category_id)->paginate(7);
+        $contactData = Contact::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->keyword)->paginate(7);
 
+        $categories = Category::pluck('name','id');
+        $genders = Contact::select('gender')->distinct()->pluck('gender');
+        
         return view('admin',compact('contactData','categories','genders'));
     }
 }
