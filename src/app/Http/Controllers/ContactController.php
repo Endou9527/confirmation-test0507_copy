@@ -42,7 +42,9 @@ class ContactController extends Controller
 
     public function search(Request $request){
         // $contactData = Contact::with('name')->KeywordSearch($request->keyword)->CategorySearch($request->category_id)->paginate(7);
-        $contactData = Contact::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->keyword)->paginate(7);
+        // \DB::enableQueryLog();
+        $contactData = Contact::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->keyword)->GenderSearch($request->gender)->DateSearch($request->date)->paginate(7);
+        // dd(\DB::getQueryLog());
 
         $categories = Category::pluck('name','id');
         $genders = Contact::select('gender')->distinct()->pluck('gender');

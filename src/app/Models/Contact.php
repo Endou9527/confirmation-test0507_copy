@@ -47,7 +47,7 @@ class Contact extends Model
         if (!empty($gender)) {
             $query->where('gender', $gender);
         }
-        // return $query;
+        return $query;
     }
 
     public function scopeCategorySearch($query, $category_id)
@@ -60,8 +60,8 @@ class Contact extends Model
     public function scopeDateSearch($query, $date)
     {
         if (!empty($date)) {
-            $query->where('date', $date);
+            return $query->whereDate('created_at', $date);
         }
-        // return $query;
+        return $query;
     }
 }
