@@ -6,17 +6,20 @@
 @endsection
 
 @section('button')
-  <a href="/login" class="logout-button">logout</a>
+  <form action="/logout" method="post">
+    @csrf
+    <button type="submit" class="logout-button">logout</button>
+  </form>
 @endsection
 
 @section('content')
-{{-- @if()--}}
+  @if(session('loginMessage'))
 <div class="login__alert">
   <div class="login__alert--success">
-    ログインしました！
+    {{ session('loginMessage') }}
   </div>
 </div>
-
+  @endif
 
 <div class="admin-page">
   <div class="admin-page__container">
@@ -65,7 +68,7 @@
             <th>性別</th>
             <th>メールアドレス</th>
             <th>お問い合わせの種類</th>
-            <th></th>  {{-- 詳細ボタンで必要 --}}
+            <th></th>  {{-- 詳細ボタンを配置 --}}
           </tr>  
         </thead>
 

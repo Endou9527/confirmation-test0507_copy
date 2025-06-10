@@ -22,7 +22,9 @@ Route::post('/contacts',[ContactController::class,'store']);
 Route::post('/confirm',[ContactController::class,'confirm']);
 
 Route::middleware('auth')->group(function () {
-  Route::get('/admin', [UserController::class, 'admin']);
+  Route::get('/admin', [UserController::class, 'admin'])->middleware('auth');
   });
 
   Route::get('/admin/search',[ContactController::class,'search']);
+
+  Route::post('/logout',[UserController::class,'logout']);

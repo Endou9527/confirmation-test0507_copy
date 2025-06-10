@@ -13,6 +13,13 @@
 @endsection
 
 @section('content')
+  @if(session('registerMessage'))
+  <div class="login__alert">
+    <div class="login__alert--success">
+      {{ session('registerMessage') }}
+    </div>
+  </div>
+  @endif
   <div class="login-page">
     <div class="form-container">
       <h2 class="form-container__page">Login</h2>
